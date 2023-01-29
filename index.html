@@ -1,0 +1,180 @@
+<html>
+  <head>
+<style>
+ <style type="text/css">
+
+table {
+  table-layout: Auto;
+  border: 2px solid red;
+  text-align: right;
+}
+
+th {
+  border: 1px solid grey;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+width: 120px;
+}
+
+td {
+  border: 1px solid grey;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  text-align: Center;
+height: 15px;
+}
+
+tr {
+  border: 1px solid blue;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+height: 15px;
+}
+</style>
+    <title>Incentive Calculator</title>
+  </head>
+  <body>
+    <h1>Incentive Calculator</h1>
+  <input type="submit" value="Calculate Incentive">
+    <table>
+      <tr>
+        <th>Plan Value</th>
+        <th>Plan Type</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td rowspan = "5"><h2><b>399</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-1" id="quantity-1"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-2" id="quantity-2"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-3" id="quantity-3"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-4" id="quantity-4"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number" name="quantity-5" id="quantity-5"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>499</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-6" id="quantity-6"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-7" id="quantity-7"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-8" id="quantity-8"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-9" id="quantity-9"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>599</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-10" id="quantity-10"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-11" id="quantity-11"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-12" id="quantity-12"></td>
+	</tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-12" id="quantity-13"></td>
+	</tr>
+
+     <tr>
+        <td rowspan = "5"><h2><b>699</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-1" id="quantity-1"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-2" id="quantity-2"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-3" id="quantity-3"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-4" id="quantity-4"></td>
+      </tr>
+      <tr>
+        <td>Prepaid</td>
+        <td><input type="number" name="quantity-5" id="quantity-5"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>799</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-6" id="quantity-6"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-7" id="quantity-7"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-8" id="quantity-8"></td>
+      </tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-9" id="quantity-9"></td>
+      </tr>
+      <tr>
+        <td rowspan = "4"><h2><b>899</b></h2></td>
+        <td>3 Months</td>
+        <td><input type="number" name="quantity-10" id="quantity-10"></td>
+      </tr>
+      <tr>
+        <td>6 Months</td>
+        <td><input type="number" name="quantity-11" id="quantity-11"></td>
+      </tr>
+      <tr>
+        <td>12 Months</td>
+        <td><input type="number" name="quantity-12" id="quantity-12"></td>
+	</tr>
+      <tr>
+        <td>Trial to Paid</td>
+        <td><input type="number" name="quantity-12" id="quantity-13"></td>
+	</tr>
+
+    </table>
+    <input type="submit" value="Submit">
+  </body>
+<script>
+  const submitBtn = document.querySelector("input[type='submit']");
+  submitBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+    let totalIncentive = 0;
+    totalIncentive += document.querySelector("#quantity-1").value * 75;
+    totalIncentive += document.querySelector("#quantity-2").value * 0;
+    totalIncentive += document.querySelector("#quantity-3").value * 100;
+    totalIncentive += document.querySelector("#quantity-4").value * 150;
+    totalIncentive += document.querySelector("#quantity-5").value * 75;
+    totalIncentive += document.querySelector("#quantity-6").value * 0;
+    totalIncentive += document.querySelector("#quantity-7").value * 175;
+    totalIncentive += document.querySelector("#quantity-8").value * 300;
+    totalIncentive += document.querySelector("#quantity-9").value * 75;
+    alert("Total Incentive for the month: " + totalIncentive);
+  });
+</script>
+</html>
