@@ -13,8 +13,9 @@
 
 table {
   table-layout: Auto;
-  border: 2px solid red;
-  text-align: right;
+  border: 1px solid grey;
+  text-align: left;
+number-align: center;
 }
 
 th {
@@ -22,7 +23,9 @@ th {
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
-width: 120px;
+  height: auto;
+  width: 130px;
+  background-color: powderblue;
 }
 
 td {
@@ -31,7 +34,7 @@ td {
   white-space: normal;
   text-overflow: ellipsis;
   text-align: Center;
-height: 15px;
+number-align; Center;
 }
 
 tr {
@@ -39,14 +42,25 @@ tr {
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
-height: 15px;
 }
 </style>
     <title>Incentive Calculator</title>
   </head>
+
   <body>
     <h1>Incentive Calculator</h1>
-  <input type="submit" value="Calculate Incentive">
+
+<label for="tenure">Select your tenure:</label>
+<select id="tenure">
+<option value="0-30 Days">0-30 Days</option>
+<option value="31-60 Days">31-60 Days</option>
+<option value="61-90 Days">61-90 Days</option>
+<option value=">90 Days">>90 Days</option>
+</select>
+
+  <br><br>
+<input type="submit" value="submit">
+
     <table>
       <tr>
         <th>Plan Value</th>
@@ -208,10 +222,12 @@ height: 15px;
         <td><input type="number" name="quantity-36" id="quantity-36"></td>
       </tr>
 
-
     </table>
-    <input type="submit" value="Calculate Incentive">
+
   </body>
+
+<button onclick="calculateIncentive()">Calculate Incentive</button>
+
 <script>
   const submitBtn = document.querySelector("input[type='submit']");
   submitBtn.addEventListener("click", function(event) {
@@ -292,10 +308,40 @@ totalact += document.querySelector("#quantity-34").value*1;
 totalact += document.querySelector("#quantity-35").value*1;
 totalact += document.querySelector("#quantity-36").value*1;
 
-  alert("Total Incentive for the month: " + totalIncentive + " and Total Activations: " + totalact);
 
+    let tenure = document.querySelector("#tenure").value;
+    let slab = 0;
+    if (totalact < 50) {
+      slab = 0;
+    } else if (totalact < 75) {
+      slab = 50;
+    } else if (totalact < 100) {
+      slab = 75;
+    } else {
+      slab = 100;
+    }
 
-
+    if (tenure == "0-30 Days" && totalact < 10) {
+      alert("minimum 10 activations are required for Incentive");
+    } else if (tenure == "31-60 Days" && totalact < 15) {
+      alert("minimum 15 activations are required for Incentive");
+    } else if (tenure == "61-90 Days" && totalact < 25) {
+      alert("minimum 25 activations are required for Incentive");
+    } else if (tenure == ">90 Days" && totalact < 35) {
+      alert("minimum 35 activations are required for Incentive");
+    } else {
+      if (tenure == "0-30 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == "31-60 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == "61-90 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      } else if (tenure == ">90 Days") {
+        totalIncentive = totalIncentive + (totalact*slab);
+      }
+      alert("Your total incentive is Rs." + totalIncentive + " And Total Activations are " + totalact +  "Activations");
+    }
   });
 </script>
+
 </html>
