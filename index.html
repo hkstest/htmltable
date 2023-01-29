@@ -48,8 +48,15 @@ tr {
   </head>
 
   <body>
-    <h1>Incentive Calculator</h1>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.0.min.js"></script>
 
+<div data-role='page' id='Home'>
+<div data-role='header' data-theme="b"><h1>HSO Incentive Calculator</h1>
+</div><!-- /header -->
+<div data-role='content'>
 <label for="tenure">Select your tenure:</label>
 <select id="tenure">
 <option value="0-30 Days">0-30 Days</option>
@@ -222,9 +229,12 @@ tr {
       </tr>
 
     </table>
+</div><!-- /content -->
+</div><!-- /page -->
 
   </body>
 
+	  
 <script>
   const submitBtn = document.querySelector("input[type='submit']");
   submitBtn.addEventListener("click", function(event) {
